@@ -5,9 +5,9 @@ Hugo shortcode to showcase HTML/CSS snippets.
 Shows two panels with HTML and CSS, and a panel rendering the
 given HTML and CSS. An alternative to embedding a Codepen.
 
-More info & demos: [Hugo Shortcode: HTML/CSS snippet preview](https://arcomul.nl/posts/tech/hugo-shortcode-html-css-snippet-preview)
-
 <img src="./demo.png" width=500>
+
+More info & demos: [Hugo Shortcode: HTML/CSS snippet preview](https://arcomul.nl/posts/tech/hugo-shortcode-html-css-snippet-preview)
 
 ## Setup
 
