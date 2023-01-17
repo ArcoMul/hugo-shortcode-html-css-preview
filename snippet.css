@@ -1,0 +1,36 @@
+.snippet-shortcode {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+}
+.snippet-shortcode .code {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.snippet-shortcode .code .html,
+.snippet-shortcode .code .style {
+  max-height: calc(50% - 0.5rem);
+  border-radius: 5px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.snippet-shortcode .code .html .highlight,
+.snippet-shortcode .code .style .highlight {
+  display: flex;
+  min-height: 100%;
+}
+.snippet-shortcode .code .html .highlight pre,
+.snippet-shortcode .code .style .highlight pre {
+  margin-bottom: 0;
+  min-height: 100%;
+  width: 100%;
+}
+.snippet-shortcode .html-frame {
+  width: 50%;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}

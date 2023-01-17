@@ -1,0 +1,48 @@
+{{/*    
+html-css-snippet-preview shortcode
+
+Shows a box with HTML, CSS and a iframe demonstrating the
+given HTML and CSS. An alternative to embedding Codepen.
+
+Usage:
+{{< snippet preview-only="true|false" height=Number|300 >}}
+<style>
+  h1 {
+    color: red;
+  }
+</style>
+<div>
+  <h1>Hello world!</h1>
+</div>
+{{< /snippet >}}
+
+*/}}
+
+{{ $previewonly := .Get "preview-only" }}
+{{ $height := default 300 (.Get "height") }}
+
+{{/*  Gets style including style tag, and style without style tag  */}}
+{{ $style := findRE `(?s)<style.*?>.*?</style>` .Inner }}
+{{ $styleonly := replaceRE `(?s)</?style.*?>` "" (index $style 0) }}
+{{ $styleonly = replaceRE `^\s+` "" $styleonly }}
+
+{{/*  Gets html  */}}
+{{ $html := findRE `(?s)</style>.*` .Inner }}
+{{ $html := replaceRE `(?s)</style>` "" (index $html 0) }}
+{{ $html = replaceRE `^\s+` "" $html }}
+
+<div class="snippet-shortcode {{ if $previewonly}}result-only{{ end }}">
+  {{/*  In case of preview only, don't print code  */}}
+  {{ if $previewonly }}
+  {{ else }}
+  <div class="code" style="height: {{ $height }}px">
+    <div class="html">
+      {{ highlight $html "html" }}
+    </div>
+    <div class="style">
+      {{ highlight $styleonly "css" }}
+    </div>
+  </div>
+  {{ end }}
+  <iframe class="html-frame" height="{{ $height }}" width="100%" srcdoc="<html><head><style>{{ $styleonly }}</style></head><body style='background-color: white'>{{ $html }}</body></html>"></iframe>
+</div>
