@@ -16,7 +16,7 @@ More info & demos: [Hugo Shortcode: HTML/CSS snippet preview](https://arcomul.nl
 
 Initiate a snippet preview in the following format:
 
-```
+```html
 {{< snippet preview-only="true|false" height=Number|300 >}}
 <style>
   h1 {
