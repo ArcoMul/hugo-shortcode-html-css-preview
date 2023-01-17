@@ -7,6 +7,8 @@ given HTML and CSS. An alternative to embedding a Codepen.
 
 More info & demos: [Hugo Shortcode: HTML/CSS snippet preview](https://arcomul.nl/posts/tech/hugo-shortcode-html-css-snippet-preview)
 
+<img src="./demo.png" width=500>
+
 ## Setup
 
 - Include `snippet.html` in Hugo layouts/shortcodes folder.
